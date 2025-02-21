@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kehwa_house/View/Splash_Screen/Splash_Screen_View.dart';
+import 'package:kehwa_house/theme.dart';
+import 'package:sizer/sizer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,15 +13,14 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: SplashScreenView(),
+    return Sizer(builder: (context, orientation, device) {
+      return MaterialApp(
+        title: 'Flutter Demo',
+        theme: CustomTheme().baseTheme,
+        debugShowCheckedModeBanner: false,
+        home: SplashScreenView(),
+      );
+    }
     );
   }
 }

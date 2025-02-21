@@ -21,27 +21,32 @@ class _SplashScreenViewState extends State<SplashScreenView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkGreen,
-      body: Center(
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 150,
-              width: 200,
-              child: Image.asset(
-                'assets/Logo.png',
-              ),
+      backgroundColor: kTextgreen2Color,
+      body: buildCenter(),
+    );
+  }
+
+  Center buildCenter() {
+    return Center(
+      child:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            height: 150,
+            width: 200,
+            child: Image.asset(
+              'assets/logo.png',
+              color: kTextWhiteColor,
             ),
-            SizedBox(
-              height: 100,
-              width: 200,
-              child: Image.asset(
-                'assets/Name.png',
-              ),
-            )
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Text(
+            'QEHWA HOUSE',
+            style: Theme.of(context).textTheme.headlineSmall,
+          )
+        ],
       ),
     );
   }
